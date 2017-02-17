@@ -2,7 +2,8 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://password-reminder.herokuapp.com',
+    // production: 'https://password-reminder.herokuapp.com',
+    development: 'http://localhost:4741/',
   },
 };
 
