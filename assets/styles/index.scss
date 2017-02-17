@@ -1,2 +1,46 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  background-color: #BDD0CE;
+  font-family: "Roboto", Arial, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 50px;
+}
+//buttons to become visible after getting signed in
+.visible-signin {
+  display: none;
+  padding: 5px;
+}
+//div to show the game result and previous games
+#warning1 {
+  width: 360px;
+  height: 25px;
+  border: 1px solid white;
+  margin-left: 20%;
+  font-size: 15px;
+}
+//Sing in warning
+
+#warning2 {
+  width: 360px;
+  height: 25px;
+  border: 1px solid white;
+  margin-left: 20%;
+  font-size: 15px;
+}
+// Warning for change Password
+
+#warning3 {
+  width: 310px;
+  height: 25px;
+  border: 1px solid white;
+  margin-left: 25%;
+  font-size: 20px;
+}
+//is the x button
+
+.close {
+  display: none;
+}
