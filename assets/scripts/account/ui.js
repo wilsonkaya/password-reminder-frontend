@@ -1,12 +1,16 @@
 'use strict';
+const showBooksTemplate = require('../templates/account-listing.handlebars');
+// const logic = require("../programlogic.js");
+const onSuccess = (data) => {
 
-const onSuccess = function (data) {
-//  debugger;
-  if (data) {
-    console.log(data.account);
-  } else {
-    console.table(data.account);
-  }
+  console.log(data);
+  let showBooksHtml = showBooksTemplate({ accounts: data.accounts });
+  $('.content').append(showBooksHtml);
+
+// console.log(data)
+//   logic.print(data);
+
+
 };
 
 const onError = function (response) {
