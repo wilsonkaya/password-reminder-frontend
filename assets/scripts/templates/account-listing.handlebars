@@ -17,12 +17,12 @@
      <p>{{account.password_hint}}</p>
 
      <!-- Button trigger modal -->
-     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#{{account.id}}">
        Launch demo modal
      </button>
 
      <!-- Modal -->
-     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal fade" id="{{account.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
        <div class="modal-dialog" role="document">
          <div class="modal-content">
            <div class="modal-header">
@@ -30,7 +30,12 @@
              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
            </div>
            <div class="modal-body">
-             ...
+             <form id="update-hint">
+               <h1 >Update!</h1>
+                 <input type="text" name="account[web_name]" value="{{account.web_name}}">
+                 <input type="text" name="account[password_hint]" value="{{account.password_hint}}">
+                 <input type="submit" name="submit" id="#{{account.id}}" class="submit-update">
+             </form>
            </div>
            <div class="modal-footer">
              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -41,7 +46,7 @@
      </div>
 
 
-     <button type="button" name="button">Remove</button>
+     <button type="button" name="button" class="btn btn-default">Remove</button>
    </div>
 
 {{/each}}
