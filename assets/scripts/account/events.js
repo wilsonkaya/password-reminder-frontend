@@ -11,22 +11,16 @@ const getFormFields = require('../../../lib/get-form-fields');
 // also, follow a convention for handlers. here, I name my handler
 // beginning with 'on' to denote that it is done when the GET /books
 // button is clicked
-// const onGetAccount = function (event) {
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//
-//  if (data.book.id.length === 0){
-//     api.index()
-//       .then(ui.onSuccess)
-//       .catch(ui.onError);
-//   } else {
-//     api.show(data.book.id)
-//       .then(ui.onSuccess)
-//       .catch(ui.onError);
-//   }
-//
-// };
-//
+const onGetAccount = function (event) {
+  event.preventDefault();
+
+  api.index()
+  .then(ui.onSuccess)
+  .catch(ui.onError);
+
+
+};
+
 // const onDeleteAccount = function(event){
 //   event.preventDefault();
 //   // let bookId = $('#delete-book-id').val();
@@ -59,7 +53,7 @@ const onPostAccount = function(event){
 };
 
 const accountHandlers = () => {
-  // $('#create-hint').on('submit', onGetAccount);
+  $('#getBooksButton').on('click', onGetAccount);
   // $('#create-hint').on('submit', onDeleteAccount);
   // $('#create-hint').on('submit', onPatchAccount);
   $('#create-hint').on('submit', onPostAccount);
