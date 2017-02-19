@@ -1,0 +1,40 @@
+
+
+
+   <div data-id="{{account.id}}">
+     <p>{{account.web_name}}</p>
+     <p>{{account.password_hint}}</p>
+
+     <!-- Button trigger modal -->
+     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mod{{account.id}}">
+       Update!
+     </button>
+
+     <!-- Modal -->
+     <div class="modal fade kapat" id="mod{{account.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+             <h4 class="modal-title" id="myModalLabel">Update!</h4>
+           </div>
+           <div class="modal-body">
+             <form class="submit-update" data-id="{{account.id}}">
+                 <input type="text" name="account[web_name]" value="{{account.web_name}}" class="clean-update">
+                 <input type="text" name="account[password_hint]" value="{{account.password_hint}}" class="clean-update">
+                 <input type="submit" name="submit">
+             </form>
+             <div class="warning-update-data">
+
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>
+
+
+     <button type="button" name="button" class="btn btn-default remove" data-id="{{account.id}}">Remove</button>
+   </div>
