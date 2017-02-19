@@ -44,7 +44,7 @@ const onPostAccount = function(event){
  let data = getFormFields(event.target);
   api.post(data)
     .then(ui.onPostSuccess)
-    .catch(ui.onError);
+    .catch(ui.onPostError);
 };
 
 const accountHandlers = () => {
