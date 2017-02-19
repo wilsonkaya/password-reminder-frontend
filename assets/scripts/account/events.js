@@ -25,7 +25,7 @@ const onDeleteAccount = function(event){
   let accountId = event.target.getAttribute('data-id');
   console.log(accountId);
   api.destroy(accountId)
-    .then(ui.onDeleteSuccess)
+    .then(ui.onDeleteSuccess(accountId))
     .catch(ui.onError);
 };
 //
@@ -33,9 +33,9 @@ const onPatchAccount = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   let accountId = event.target.getAttribute('data-id');
-  console.log(data,accountId);
+  // console.log(data,accountId);
   api.patch(data, accountId)
-    .then(ui.onPatchSuccess)
+    .then(ui.onPatchSuccess(data,accountId))
     .catch(ui.onError);
 };
 
