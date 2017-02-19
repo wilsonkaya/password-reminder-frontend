@@ -20,20 +20,28 @@ const show = function (id) {
   });
 };
 
-const destroy = function(id){
+const destroy = function(accountId){
   return $.ajax({
-    url: config.apiOrigin + '/accounts/' + id,
+    url: config.apiOrigin + '/accounts/' + accountId,
     method: 'DELETE',
+    headers:{
+      Authorization:`Token token=${store.user.token}`
+    },
   });
 };
 
-const patch = function(data){
+
+const patch = function(data, accountId){
   return $.ajax({
-    url: config.apiOrigin + '/accounts/' + data.book.id,
-    method: 'PATCH',
-    data,
+    url: config.apiOrigin + '/accounts/' + accountId,
+    method: "PATCH",
+    headers:{
+      Authorization:`Token token=${store.user.token}`
+    },
+    data
   });
 };
+
 
 const post = function (data) {
   return $.ajax({
