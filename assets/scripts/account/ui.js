@@ -1,5 +1,6 @@
 'use strict';
 const showBooksTemplate = require('../templates/account-listing.handlebars');
+const createAccount = require('../templates/account-new.handlebars')
 // const logic = require("../programlogic.js");
 const onSuccess = (data) => {
   let showBooksHtml = showBooksTemplate({ accounts: data.accounts });
@@ -28,6 +29,9 @@ const onPostSuccess = function (data) {
   setTimeout(function() {$('#myModal-create-password').modal('hide');}, 1300);
   setTimeout(function() {$('.clean-create').val("");}, 1300);
   setTimeout(function() {$('#warning-create-new-data').text("");}, 1300);
+  let showBooksHtml = createAccount({ account: data.account });
+  $('.content').append(showBooksHtml);
+
   console.log(data);
 };
 
