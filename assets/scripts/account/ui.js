@@ -5,8 +5,6 @@ const onSuccess = (data) => {
 
 
   let showBooksHtml = showBooksTemplate({ accounts: data.accounts });
-  // $('.content').empty();
-  $('.content').html("");
   $('.content').append(showBooksHtml);
 
 };
