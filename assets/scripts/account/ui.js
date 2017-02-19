@@ -1,6 +1,7 @@
 'use strict';
 const showBooksTemplate = require('../templates/account-listing.handlebars');
-const createAccount = require('../templates/account-new.handlebars')
+const createAccount = require('../templates/account-new.handlebars');
+const updateAccount = require('../templates/account-update.handlebars');
 // const logic = require("../programlogic.js");
 const onSuccess = (data) => {
   let showBooksHtml = showBooksTemplate({ accounts: data.accounts });
@@ -11,15 +12,18 @@ const onError = function (response) {
   console.error(response);
 };
 
-const onDeleteSuccess = function () {
-  console.log('Account was successfully deleted.');
+const onDeleteSuccess = function (accountId) {
+  $('[data-id ='+ accountId +']').remove();
 };
 
 
-const onPatchSuccess = () => {
+const onPatchSuccess = (data, accountId) => {
   $(".warning-update-data").text("Succesfull !");
   setTimeout(function() {$('.kapat').modal('hide');}, 1300);
   setTimeout(function() {$('.warning-update-data').text("");}, 1300);
+  // let showBooksHtml = updateAccount({ account: data.account});
+  // setTimeout(function() {$('[data-id ='+ accountId +']').html(showBooksHtml);}, 1300);
+// $('[data-id ='+ accountId +']').html(showBooksHtml);
 
 };
 
