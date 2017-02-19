@@ -13,7 +13,6 @@ const getFormFields = require('../../../lib/get-form-fields');
 // button is clicked
 const onGetAccount = function (event) {
   event.preventDefault();
-
   api.index()
   .then(ui.onSuccess)
   .catch(ui.onError);
@@ -21,32 +20,28 @@ const onGetAccount = function (event) {
 
 };
 
-// const onDeleteAccount = function(event){
-//   event.preventDefault();
-//   // let bookId = $('#delete-book-id').val();
-//   // multiple ways to do everything.
-//   // However prefer this way.
+const onDeleteAccount = function(event){
+  event.preventDefault();
+  let accountId = event.target.getAttribute('data-id');
+  console.log(accountId);
+  api.destroy(accountId)
+    .then(ui.onDeleteSuccess)
+    .catch(ui.onError);
+};
 //
-//  let data = getFormFields(event.target);
-//   api.destroy(data.book.id)
-//     .then(ui.onDeleteSuccess)
-//     .catch(ui.onError);
-// };
-//
-// const onPatchAccount = function(event){
-//   event.preventDefault();
-//
-//  let data = getFormFields(event.target);
-//   api.patch(data)
-//     .then(ui.onPatchSuccess)
-//     .catch(ui.onError);
-// };
+const onPatchAccount = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  let accountId = event.target.getAttribute('data-id');
+  console.log(data,accountId);
+  api.patch(data, accountId)
+    .then(ui.onPatchSuccess)
+    .catch(ui.onError);
+};
 
 const onPostAccount = function(event){
   event.preventDefault();
-
  let data = getFormFields(event.target);
- console.log(data);
   api.post(data)
     .then(ui.onPostSuccess)
     .catch(ui.onError);
@@ -54,8 +49,8 @@ const onPostAccount = function(event){
 
 const accountHandlers = () => {
   $('#getBooksButton').on('click', onGetAccount);
-  // $('#create-hint').on('submit', onDeleteAccount);
-  // $('#create-hint').on('submit', onPatchAccount);
+  $('#content').on('click','.remove' ,onDeleteAccount);
+  $('#content').on('submit', '.submit-update', onPatchAccount);
   $('#create-hint').on('submit', onPostAccount);
 
 };
