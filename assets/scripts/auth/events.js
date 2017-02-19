@@ -15,16 +15,16 @@ const onSignUp = function(event) {
       $("#warning1").text("");
       if (response !== "") {
         $("#warning1").text("Succesfull !");
-        setTimeout(function() {$('#myModal').modal('hide');}, 1300)
+        setTimeout(function() {$('#myModal').modal('hide');}, 1300);
         // $('#myModal').modal('hide');
-        setTimeout(function() {$('.clean-signup').val("");}, 1300)
+        setTimeout(function() {$('.clean-signup').val("");}, 1300);
         // $('.clean-signup').val("");
-        setTimeout(function() {$('#warning1').text("");}, 1300)
+        setTimeout(function() {$('#warning1').text("");}, 1300);
       }
     })
     .then(ui.success)
     .catch((error) => {
-      $("#warning1").text("Existing username or wrong password !")
+      $("#warning1").text("Existing username or wrong password !");
     })
     .catch(ui.failure);
 };
