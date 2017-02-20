@@ -4,8 +4,13 @@ const createAccount = require('../templates/account-new.handlebars');
 const updateAccount = require('../templates/account-update.handlebars');
 // const logic = require("../programlogic.js");
 const onSuccess = (data) => {
-  let showBooksHtml = showBooksTemplate({ accounts: data.accounts });
-  $('#content').html(showBooksHtml);
+  if (data.accounts.length === 0) {
+    $("#warning-get").text("No data");
+  }else{
+    let showBooksHtml = showBooksTemplate({ accounts: data.accounts });
+    $('#content').html(showBooksHtml);
+  }
+
 };
 
 const onError = function (response) {
@@ -36,6 +41,7 @@ const onPostSuccess = function (data) {
   setTimeout(function() {$('#warning-create-new-data').text("");}, 1300);
   let showBooksHtml = createAccount({ account: data.account });
   $('.content').append(showBooksHtml);
+  $("#warning-get").text("");
 
   console.log(data);
 };
