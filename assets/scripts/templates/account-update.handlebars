@@ -1,16 +1,15 @@
-
-   <div data-id="{{account.id}}">
-     <p>{{account.web_name}}</p>
-     <p>{{account.password_hint}}</p>
-
+<div data-id="{{accountId}}">
+  {{log accountId}}
+  <p>{{account.web_name}}</p>
+  <p>{{account.password_hint}}</p>
 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mod{{account.id}}">
-    Update!
-  </button>
+  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#mod{{accountId}}">
+       Update!
+     </button>
 
   <!-- Modal -->
-  <div class="modal fade" id="mod{{account.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal fade kapat" id="mod{{accountId}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -18,10 +17,10 @@
           <h4 class="modal-title" id="myModalLabel">Update!</h4>
         </div>
         <div class="modal-body">
-          <form class="submit-update" data-id="{{account.id}}">
-              <input type="text" name="account[web_name]" value="{{account.web_name}}" class="clean-update">
-              <input type="text" name="account[password_hint]" value="{{account.password_hint}}" class="clean-update">
-              <input type="submit" name="submit">
+          <form class="submit-update" data-id="{{accountId}}">
+            <input type="text" name="account[web_name]" value="{{account.web_name}}" class="clean-update">
+            <input type="text" name="account[password_hint]" value="{{account.password_hint}}" class="clean-update">
+            <input type="submit" name="submit">
           </form>
           <div class="warning-update-data">
 
