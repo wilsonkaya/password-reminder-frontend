@@ -19,11 +19,12 @@ const onDeleteSuccess = function (accountId) {
 
 const onPatchSuccess = (data, accountId) => {
   $(".warning-update-data").text("Succesfull !");
-  setTimeout(function() {$('.kapat').modal('hide');}, 1300);
-  setTimeout(function() {$('.warning-update-data').text("");}, 1300);
-//   let showBooksHtml = updateAccount({ account: data.account});
-//   // setTimeout(function() {$('[data-id ='+ accountId +']').html(showBooksHtml);}, 1300);
-// $('[data-id ='+ accountId +']').html(showBooksHtml);
+  setTimeout(function() {$('.kapat').modal('hide');}, 1250);
+  setTimeout(function() {$('.warning-update-data').text("");}, 1250);
+  // console.log(accountId)
+  let showBooksHtml = updateAccount({ account: data.account, accountId});
+  // setTimeout(function() {$('[data-id ='+ accountId +']').html(showBooksHtml);}, 1300);
+setTimeout(function() {$('[data-id ='+ accountId +']').replaceWith(showBooksHtml);}, 1475);
 
 };
 
