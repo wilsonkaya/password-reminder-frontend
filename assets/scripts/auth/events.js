@@ -83,6 +83,7 @@ const onSignOut = function(event) {
       $(".clean-changepassword").val("");
       $("#warning3").text("");
       $('.content').empty();
+      $("#warning-get").text("");
 
     })
     .then(ui.success)
