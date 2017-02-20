@@ -6,6 +6,7 @@ const updateAccount = require('../templates/account-update.handlebars');
 const onSuccess = (data) => {
   let showBooksHtml = showBooksTemplate({ accounts: data.accounts });
   $('#content').append(showBooksHtml);
+  $('#getBooksButton').hide();
 };
 
 const onError = function (response) {
