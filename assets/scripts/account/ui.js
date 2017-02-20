@@ -5,8 +5,7 @@ const updateAccount = require('../templates/account-update.handlebars');
 // const logic = require("../programlogic.js");
 const onSuccess = (data) => {
   let showBooksHtml = showBooksTemplate({ accounts: data.accounts });
-  $('#content').append(showBooksHtml);
-  $('#getBooksButton').hide();
+  $('#content').html(showBooksHtml);
 };
 
 const onError = function (response) {
