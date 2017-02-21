@@ -1,25 +1,89 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Reminder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <button type="button" class="btn btn-primary btn-lg signin-hide" data-toggle="modal" data-target="#myModal">
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-warning btn-lg signin-hide" data-toggle="modal" data-target="#myModal2">
+              Sign In
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Sign in!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="sign-in">
+                      <fieldset>
+                        <label>
+                          Email
+                          <input type="text" name="credentials[email]" class="clean-signin">
+                        </label>
+                        <label>
+                          Password
+                          <input type= "password" name="credentials[password]" class="clean-signin">
+                        </label>
+                        <input type="submit" name="submit" value="Sign in!">
+                      </fieldset>
+                    </form>
+                    <div id="warning2">
+
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+
+  <button type="button" class="btn btn-primary btn-lg signin-hide" data-toggle="modal" data-target="#myModal">
     Sign Up
     </button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">Sign up!</h4>
@@ -27,15 +91,15 @@
         <div class="modal-body">
           <form id="sign-up">
             <fieldset>
-              <label >
+              <label>
                 Email
                 <input type="text" name="credentials[email]" class= "clean-signup">
               </label>
-              <label >
+              <label>
                 Password
                 <input type= "password" name="credentials[password]" class = "clean-signup">
               </label>
-              <label >
+              <label>
                 Password Confirmation
                 <input type="password" name="credentials[password_confirmation]" class="clean-signup">
               </label>
@@ -45,44 +109,6 @@
 
             </div>
           </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary btn-lg signin-hide" data-toggle="modal" data-target="#myModal2">
-    Sign In
-  </button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel">Sign in!</h4>
-        </div>
-        <div class="modal-body">
-          <form id="sign-in">
-            <fieldset>
-              <label >
-                Email
-                <input type="text" name="credentials[email]" class="clean-signin">
-              </label>
-              <label >
-                Password
-                <input type= "password" name="credentials[password]" class="clean-signin">
-              </label>
-              <input type="submit" name="submit" value="Sign in!" >
-            </fieldset>
-          </form>
-          <div id="warning2">
-
-          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
@@ -91,92 +117,94 @@
     </div>
   </div>
 
-<div class="visible-signin">
-  <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
+
+  <div class="visible-signin">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal3">
   Change Password
 </button>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Change Password!</h4>
-      </div>
-      <div class="modal-body">
-        <form id="change-password">
-          <fieldset>
-            <label >
+    <!-- Modal -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Change Password!</h4>
+          </div>
+          <div class="modal-body">
+            <form id="change-password">
+              <fieldset>
+                <label>
               Old Password
               <input type= "password" name="passwords[old]" class="clean-changepassword">
             </label>
-            <label >
+                <label>
               New Password
               <input type= "password" name="passwords[new]" class="clean-changepassword">
             </label>
-            <input type="submit" name="submit" value="change-password">
-          </fieldset>
-          <div id="warning3">
+                <input type="submit" name="submit" value="change-password">
+              </fieldset>
+              <div id="warning3">
 
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<form id="sign-out">
-  <fieldset>
-    <input type="submit" class="btn btn-primary btn-lg" name="submit" value="Sign Out!">
-  </fieldset>
-</form>
+    <form id="sign-out">
+      <fieldset>
+        <input type="submit" class="btn btn-primary btn-lg" name="submit" value="Sign Out!">
+      </fieldset>
+    </form>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-create-password">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal-create-password">
   Create New!
 </button>
 
-<!-- Modal -->
-<div class="modal fade" id="myModal-create-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Create New!</h4>
-      </div>
-      <div class="modal-body">
-          <form id="create-hint">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal-create-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Create New!</h4>
+          </div>
+          <div class="modal-body">
+            <form id="create-hint">
               <input type="text" name="account[web_name]" placeholder="Web_name" class="clean-create">
               <input type="text" name="account[password_hint]" placeholder="Password_hint" class="clean-create">
               <input type="submit" name="submit">
-          </form>
-          <div id="warning-create-new-data">
+            </form>
+            <div id="warning-create-new-data">
 
+            </div>
           </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
+    <div id="warning-get">
+
+    </div>
+    <div id="show">
+      <button id="getBooksButton" class="btn btn-default">Get Accounts</button>
+      <div id="content" class="content">
+      </div>
+    </div>
+
+
   </div>
-</div>
-<div id="warning-get">
-
-</div>
-<div id="show">
-  <button id="getBooksButton" class="btn btn-default">Get Accounts</button>
-  <div id="content" class="content">
-  </div>
-</div>
-
-
-</div>
 
 
 
-    </body>
+</body>
+
 </html>
