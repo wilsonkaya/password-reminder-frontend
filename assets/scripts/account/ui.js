@@ -5,7 +5,7 @@ const updateAccount = require('../templates/account-update.handlebars');
 // const logic = require("../programlogic.js");
 const onSuccess = (data) => {
   if (data.accounts.length === 0) {
-    $("#warning-get").text("No data");
+    $("#warning-get").html('<p class="blink_me"> NO DATA! </p>');
   }else{
     let showBooksHtml = showBooksTemplate({ accounts: data.accounts });
     $('#content').html(showBooksHtml);
