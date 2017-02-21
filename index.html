@@ -25,12 +25,59 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Brand</a>
+        <a class="navbar-brand" href="#"> <img class="img-responsive" src="assets/styles/icons/icon.png">Reminder</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
         <ul class="nav navbar-nav navbar-right">
+          <li>
+            <button type="button" class="btn btn-primary btn-lg visible-signin" data-toggle="modal" data-target="#myModal3">
+              Change Password
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Change Password!</h4>
+                  </div>
+                  <div class="modal-body">
+                    <form id="change-password">
+                      <fieldset>
+                        <label>
+                      Old Password
+                      <input type= "password" name="passwords[old]" class="clean-changepassword">
+                    </label>
+                        <label>
+                      New Password
+                      <input type= "password" name="passwords[new]" class="clean-changepassword">
+                    </label>
+                        <input type="submit" name="submit" value="change-password">
+                      </fieldset>
+                      <div id="warning3">
+
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <form id="sign-out">
+              <fieldset>
+                <input type="submit" class="btn btn-primary btn-lg visible-signin" name="submit" value="Sign Out!">
+              </fieldset>
+            </form>
+          </li>
 
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-warning btn-lg signin-hide" data-toggle="modal" data-target="#myModal2">
@@ -73,6 +120,8 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+
+
 
   <div class="container">
     <div class="row">
@@ -123,84 +172,51 @@
       </div>
     </div>
 
-
     <div class="col-xs-6 col-md-4 inner">
-      <button type="button" class="btn btn-primary btn-lg visible-signin" data-toggle="modal" data-target="#myModal3">
-    Change Password
-  </button>
+      <ul>
+        <li>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-lg visible-signin" data-toggle="modal" data-target="#myModal-create-password">
+        Create New!
+      </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Change Password!</h4>
-            </div>
-            <div class="modal-body">
-              <form id="change-password">
-                <fieldset>
-                  <label>
-                Old Password
-                <input type= "password" name="passwords[old]" class="clean-changepassword">
-              </label>
-                  <label>
-                New Password
-                <input type= "password" name="passwords[new]" class="clean-changepassword">
-              </label>
-                  <input type="submit" name="submit" value="change-password">
-                </fieldset>
-                <div id="warning3">
-
+          <!-- Modal -->
+          <div class="modal fade" id="myModal-create-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Create New!</h4>
                 </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <form id="sign-out">
-        <fieldset>
-          <input type="submit" class="btn btn-primary btn-lg visible-signin" name="submit" value="Sign Out!">
-        </fieldset>
-      </form>
+                <div class="modal-body">
+                  <form id="create-hint">
+                    <input type="text" name="account[web_name]" placeholder="Web_name" class="clean-create">
+                    <input type="text" name="account[password_hint]" placeholder="Password_hint" class="clean-create">
+                    <input type="submit" name="submit">
+                  </form>
+                  <div id="warning-create-new-data">
 
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary btn-lg visible-signin" data-toggle="modal" data-target="#myModal-create-password">
-    Create New!
-  </button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="myModal-create-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">Create New!</h4>
-            </div>
-            <div class="modal-body">
-              <form id="create-hint">
-                <input type="text" name="account[web_name]" placeholder="Web_name" class="clean-create">
-                <input type="text" name="account[password_hint]" placeholder="Password_hint" class="clean-create">
-                <input type="submit" name="submit">
-              </form>
-              <div id="warning-create-new-data">
-
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
           </div>
-        </div>
-      </div>
 
-      <button id="getBooksButton" class="btn btn-primary btn-lg visible-signin">Get Accounts</button>
-      <div id="warning-get" class="visible-signin">
+        </li>
 
-      </div>
+        <li>
+          <button id="getBooksButton" class="btn btn-primary btn-lg visible-signin">Get Accounts</button>
+          <div id="warning-get" class="visible-signin">
+
+          </div>
+        </li>
+        <li>
+        </li>
+      </ul>
+
 
 
     </div>
