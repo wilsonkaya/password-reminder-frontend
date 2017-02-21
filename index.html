@@ -177,51 +177,50 @@
     </div>
 
     <div class="col-xs-6 col-md-4 inner">
-      <ul>
-        <li>
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary btn-lg visible-signin" data-toggle="modal" data-target="#myModal-create-password">
-        Create New!
-      </button>
+            <div class="sidebar-nav-fixed pull-right visible-signin">
+                    <ul class="nav ">
+                        <li class="nav-header">Sidebar</li>
+                        <li class="active">
+                          <!-- Button trigger modal -->
+                          <button type="button" class="btn btn-primary btn-lg visible-signin" data-toggle="modal" data-target="#myModal-create-password">
+                        Create New!
+                        </button>
 
-          <!-- Modal -->
-          <div class="modal fade" id="myModal-create-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel">Create New!</h4>
-                </div>
-                <div class="modal-body">
-                  <form id="create-hint">
-                    <input type="text" name="account[web_name]" placeholder="Web_name" class="clean-create">
-                    <input type="text" name="account[password_hint]" placeholder="Password_hint" class="clean-create">
-                    <input type="submit" name="submit">
-                  </form>
-                  <div id="warning-create-new-data">
+                          <!-- Modal -->
+                          <div class="modal fade" id="myModal-create-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                  <h4 class="modal-title" id="myModalLabel">Create New!</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <form id="create-hint">
+                                    <input type="text" name="account[web_name]" placeholder="Web_name" class="clean-create">
+                                    <input type="text" name="account[password_hint]" placeholder="Password_hint" class="clean-create">
+                                    <input type="submit" name="submit">
+                                  </form>
+                                  <div id="warning-create-new-data">
 
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-              </div>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </li>
+
+                        <li>
+                          <button id="getBooksButton" class="btn btn-primary btn-lg visible-signin">Get Accounts</button>
+                          <div id="warning-get" class="visible-signin">
+
+                          </div>
+                        </li>
+
+                    </ul>
             </div>
-          </div>
-
-        </li>
-
-        <li>
-          <button id="getBooksButton" class="btn btn-primary btn-lg visible-signin">Get Accounts</button>
-          <div id="warning-get" class="visible-signin">
-
-          </div>
-        </li>
-        <li>
-        </li>
-      </ul>
-
-
 
     </div>
   </div>
