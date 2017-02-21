@@ -2,11 +2,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 body {
-  background-color: #BDD0CE;
   font-family: "Roboto", Arial, sans-serif;
-  margin: 0 auto;
+  // margin: 0 auto;
   text-align: center;
-  margin-top: 50px;
+  background-color: transparent;
 }
 //buttons to become visible after getting signed in
 .visible-signin {
@@ -71,4 +70,17 @@ body {
   border: 1px solid #BDD0CE;
   margin-left: 45%;
   font-size: 20px;
+}
+
+html{
+  background: url("age.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
 }
