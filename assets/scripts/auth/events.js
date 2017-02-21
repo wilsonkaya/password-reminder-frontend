@@ -43,6 +43,7 @@ const onSignIn = function(event) {
         $(".visible-signin").show();
         $('.clean-signin').val("");
         $('.signin-hide').hide();
+        $('.slogan').hide();
 
       }
       return store.user;
@@ -84,6 +85,7 @@ const onSignOut = function(event) {
       $("#warning3").text("");
       $('.content').empty();
       $("#warning-get").text("");
+      $('.slogan').show();
 
     })
     .then(ui.success)
