@@ -108,9 +108,10 @@ html{
   //  background: rgb(200, 54, 54); /* for red */
    background: rgba(200, 200, 200, 0.5);
    p {
-       font-size: 1.2em;
+       font-size: 3em;
+       padding: 10px;
        .btn {
-           padding: 0.5em;
+           padding: 1em;
        }
    }
 }
@@ -139,3 +140,13 @@ html{
    margin-right: 5px;
    margin-bottom: 5px;
 }
+
+h3 {
+   font-family: Georgia, Times, serif;
+    font-size: 40px;
+    color: white;
+    line-height: 1.5;
+    letter-spacing: .25px;
+}
+
+p:hover{ -webkit-transform: scale(1.5); }
