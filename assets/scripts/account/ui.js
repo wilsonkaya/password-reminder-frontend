@@ -42,8 +42,6 @@ const onPostSuccess = function (data) {
   let showBooksHtml = createAccount({ account: data.account });
   $('.content').append(showBooksHtml);
   $("#warning-get").text("");
-
-  console.log(data);
 };
 
 
