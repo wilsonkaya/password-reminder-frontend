@@ -86,6 +86,7 @@ const onSignOut = function(event) {
       $('.content').empty();
       $("#warning-get").text("");
       $('.slogan').show();
+      $('.clean-signup').val("");
 
     })
     .then(ui.success)
